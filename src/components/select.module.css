@@ -1,0 +1,42 @@
+.wrapper {
+	position: relative;
+	flex: 1;
+}
+.select {
+	display: flex;
+	align-items: center;
+	font-size: 0.8rem;
+	padding: 1em 2em;
+	justify-content: space-between;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	border-radius: 5px;
+}
+
+.expand {
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	width: 100%;
+	position: absolute;
+	top: 48px;
+	border-radius: 5px;
+	background-color: white;
+}
+
+.condition {
+	padding: 1em 2em;
+	font-size: 0.8rem;
+	cursor: pointer;
+	text-align: center;
+}
+
+.condition:nth-child(1) {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.condition:last-child {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.condition:hover {
+	background-color: rgb(219, 218, 218);
+}

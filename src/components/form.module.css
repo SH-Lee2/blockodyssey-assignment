@@ -1,0 +1,27 @@
+.form {
+	display: flex;
+	column-gap: 1em;
+	flex: 2;
+}
+
+.input {
+	border: none;
+	width: 100%;
+	border-radius: 5px;
+	padding: 1em 2em;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.input:focus {
+	outline: none;
+}
+
+.button {
+	background-color: black;
+	color: white;
+	border-radius: 5px;
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
