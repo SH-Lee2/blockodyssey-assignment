@@ -4,24 +4,34 @@ import styles from "./pagination.module.css";
 
 const getButtonArray = ({ currentPage, max, offset }) => {
 	const offsetNumber =
-		currentPage <= offset || currentPage > max - offset ? offset : offset - 1;
+		currentPage <= offset || currentPage > max - offset - 1
+			? offset
+			: offset - 1;
 	const numbersList = [];
 	const numbersListWithDots = [];
 
 	if (max <= 1 || max === undefined) return [1];
 
 	numbersList.push(1);
-	for (
-		let i = currentPage - offsetNumber;
-		i <= currentPage + offsetNumber;
-		i++
-	) {
+	const end =
+		currentPage < 5
+			? 5
+			: currentPage > max - 4
+			? max
+			: currentPage + offsetNumber;
+	const start =
+		currentPage < 5
+			? 2
+			: currentPage > max - 4
+			? max - 4
+			: currentPage - offsetNumber;
+	for (let i = start; i <= end; i++) {
 		if (i < max && i > 1) {
 			numbersList.push(i);
 		}
 	}
 	numbersList.push(max);
-
+	if (currentPage > 5) console.log(numbersList);
 	numbersList.reduce((accumulator, currentValue) => {
 		if (accumulator === 1) {
 			numbersListWithDots.push(accumulator);
@@ -38,7 +48,11 @@ const getButtonArray = ({ currentPage, max, offset }) => {
 };
 
 const Pagination = ({ max, currentPage, setCurrentPage }) => {
-	const pages = getButtonArray({ currentPage, max, offset: 2 });
+	const pages = getButtonArray({
+		currentPage,
+		max,
+		offset: 2,
+	});
 	return (
 		<div className={styles.wrapper}>
 			<button
