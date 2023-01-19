@@ -37,3 +37,5 @@ BlockOdyssey assignment
 ## My process
 
 ### Built with
+- react v18
+- react query v4
