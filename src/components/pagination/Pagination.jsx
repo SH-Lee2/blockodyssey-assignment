@@ -31,7 +31,7 @@ const getButtonArray = ({ currentPage, max, offset }) => {
 		}
 	}
 	numbersList.push(max);
-	if (currentPage > 5) console.log(numbersList);
+
 	numbersList.reduce((accumulator, currentValue) => {
 		if (accumulator === 1) {
 			numbersListWithDots.push(accumulator);
