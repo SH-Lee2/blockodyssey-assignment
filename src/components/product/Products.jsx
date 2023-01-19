@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { Fragment, useState } from "react";
-import { perPages } from "../constants";
-import Pagination from "./Pagination";
-import Select from "./Select";
+import { perPages } from "../../constants";
+import Pagination from "../pagination/Pagination";
+import Select from "../Select";
 import styles from "./products.module.css";
 import ProductList from "./ProductList";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { arrowLeft, arrowRight } from "../assets";
+import { arrowLeft, arrowRight } from "../../assets";
 import styles from "./pagination.module.css";
 
 const getButtonArray = ({ currentPage, max, offset }) => {

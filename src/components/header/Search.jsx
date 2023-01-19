@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { conditions } from "../constants";
+import { conditions } from "../../constants";
 import Form from "./Form";
-import Select from "./Select";
+import Select from "../Select";
 import styles from "./search.module.css";
 
 const Search = () => {
