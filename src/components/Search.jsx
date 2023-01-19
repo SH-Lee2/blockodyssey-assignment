@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { conditions } from "../constants";
 import Form from "./Form";
 import Select from "./Select";
 import styles from "./search.module.css";
 
 const Search = () => {
-	const [currentCondition, setCurrentCondition] = useState("전체");
+	const urlParams = new URLSearchParams(window.location.search);
+	const [currentCondition, setCurrentCondition] = useState(
+		urlParams.get("condition") || "전체"
+	);
+	const [keyword, setKeyword] = useState(urlParams.get("keyword") || "");
+
+	useEffect(() => {
+		window.history.pushState(
+			"",
+			null,
+			`?keyword=${keyword}&condition=${currentCondition}`
+		);
+	}, [currentCondition, keyword]);
+
 	return (
 		<div className={styles.wrapper}>
 			<div className={`${styles["title-wrapper"]}`}>
@@ -16,7 +29,7 @@ const Search = () => {
 				onOptionClick={setCurrentCondition}
 				options={conditions}
 			/>
-			<Form />
+			<Form setKeyword={setKeyword} keyword={keyword} />
 		</div>
 	);
 };

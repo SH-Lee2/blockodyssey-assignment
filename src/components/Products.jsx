@@ -18,6 +18,7 @@ const Products = () => {
 	const [currentPerPage, setCurrentPerPage] = useState(10);
 
 	if (isLoading) return;
+
 	return (
 		<Fragment>
 			<div className={styles["result-text"]}>
