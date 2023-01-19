@@ -19,6 +19,11 @@ const Products = () => {
 
 	if (isLoading) return;
 
+	const perPageClickHandler = (perpage) => {
+		setCurrentPerPage(perpage);
+		setCurrentPage(1);
+	};
+
 	return (
 		<Fragment>
 			<div className={styles["result-text"]}>
@@ -46,7 +51,7 @@ const Products = () => {
 				<div className={styles["pagination-wrapper"]}>
 					<Select
 						current={currentPerPage}
-						onOptionClick={setCurrentPerPage}
+						onOptionClick={perPageClickHandler}
 						options={perPages}
 						direction="top"
 						name="perPage"
