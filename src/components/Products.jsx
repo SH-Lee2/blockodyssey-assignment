@@ -22,7 +22,7 @@ const Products = () => {
 	return (
 		<Fragment>
 			<div className={styles["result-text"]}>
-				<span>검색된 데이터: 100건</span>
+				<span>검색된 데이터: {data.products.length}건</span>
 			</div>
 			<div className={styles.wrapper}>
 				<table className={styles.table}>
