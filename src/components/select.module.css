@@ -1,28 +1,33 @@
 .wrapper {
-	position: relative;
-	flex: 1;
-}
-.select {
 	display: flex;
 	align-items: center;
+	column-gap: 1em;
+}
+.select {
+	position: relative;
+	display: flex;
+	align-items: center;
+	column-gap: 2em;
 	font-size: 0.8rem;
-	padding: 1em 2em;
+	padding: 1em 1.5em;
 	justify-content: space-between;
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 	border-radius: 5px;
+	cursor: pointer;
 }
 
 .expand {
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	width: 100%;
 	position: absolute;
-	top: 48px;
+	/* bottom: 48px; */
+	left: 0;
 	border-radius: 5px;
 	background-color: white;
 }
 
 .condition {
-	padding: 1em 2em;
+	padding: 1em 1.5em;
 	font-size: 0.8rem;
 	cursor: pointer;
 	text-align: center;
