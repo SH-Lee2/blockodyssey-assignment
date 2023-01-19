@@ -1,6 +1,8 @@
 export const conditions = [
-	{ name: "전체" },
-	{ name: "상품명" },
-	{ name: "브랜드" },
-	{ name: "상품내용" },
+	{ value: "전체" },
+	{ value: "상품명" },
+	{ value: "브랜드" },
+	{ value: "상품내용" },
 ];
+
+export const perPages = [{ value: 10 }, { value: 20 }, { value: 50 }];
