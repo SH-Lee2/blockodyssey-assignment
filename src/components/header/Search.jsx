@@ -12,6 +12,7 @@ const Search = () => {
 	const [keyword, setKeyword] = useState(urlParams.get("keyword") || "");
 
 	useEffect(() => {
+		if (currentCondition === "" || keyword === "") return;
 		window.history.pushState(
 			"",
 			null,
