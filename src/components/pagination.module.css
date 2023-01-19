@@ -1,0 +1,35 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+	column-gap: 0.5em;
+	padding: 1.5em;
+}
+.button {
+	padding: 0.5em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	border: solid 1px rgb(188, 188, 188);
+	border-radius: 5px;
+	font-size: 1rem;
+	outline: none;
+	cursor: pointer;
+}
+
+.button:disabled {
+	cursor: default;
+}
+
+.dot {
+	background-color: transparent;
+	outline: none;
+	border: none;
+	padding: 0.5em;
+}
+
+.active {
+	background-color: rgb(188, 188, 188);
+	color: white;
+	cursor: default;
+}

@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { Fragment } from "react";
-
+import React, { Fragment, useState } from "react";
+import { perPages } from "../constants";
+import Pagination from "./Pagination";
+import Select from "./Select";
 import styles from "./products.module.css";
 import ProductList from "./ProductList";
 
@@ -12,6 +14,8 @@ const getData = async () => {
 
 const Products = () => {
 	const { data, isLoading } = useQuery(["list"], getData);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [currentPerPage, setCurrentPerPage] = useState(10);
 
 	if (isLoading) return;
 	return (
@@ -32,8 +36,26 @@ const Products = () => {
 							<th>재고</th>
 						</tr>
 					</thead>
-					<ProductList products={data.products} />
+					<ProductList
+						products={data.products}
+						currentPage={currentPage}
+						currentPerPage={currentPerPage}
+					/>
 				</table>
+				<div className={styles["pagination-wrapper"]}>
+					<Select
+						current={currentPerPage}
+						onOptionClick={setCurrentPerPage}
+						options={perPages}
+						direction="top"
+						name="perPage"
+					/>
+					<Pagination
+						max={data.products.length / currentPerPage}
+						currentPage={currentPage}
+						setCurrentPage={setCurrentPage}
+					/>
+				</div>
 			</div>
 		</Fragment>
 	);

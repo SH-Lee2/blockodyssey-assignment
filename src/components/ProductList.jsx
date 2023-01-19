@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./productList.module.css";
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, currentPage, currentPerPage }) => {
 	return (
 		<tbody className={styles.tbody}>
-			{products.map(
-				({ id, title, brand, description, price, rating, stock }) => (
+			{products
+				.slice((currentPage - 1) * currentPerPage, currentPage * currentPerPage)
+				.map(({ id, title, brand, description, price, rating, stock }) => (
 					<tr key={id}>
 						<td>{id}</td>
 						<td>{title}</td>
@@ -19,8 +20,7 @@ const ProductList = ({ products }) => {
 						<td>{rating}</td>
 						<td>{stock}</td>
 					</tr>
-				)
-			)}
+				))}
 		</tbody>
 	);
 };
