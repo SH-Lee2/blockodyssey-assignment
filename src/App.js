@@ -1,10 +1,13 @@
 import Header from "./components/Header";
+import Products from "./components/Products";
 
 function App() {
 	return (
 		<>
 			<Header />
-			<main></main>
+			<main>
+				<Products />
+			</main>
 		</>
 	);
 }
